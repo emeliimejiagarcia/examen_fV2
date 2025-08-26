@@ -1,0 +1,43 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('academic_area', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('area_name');
+            $table->string('area_code')->unique();
+            $table->string('location');
+            $table->string('equipment_coordinator');
+            $table->string('area_type');
+            $table->text('description');
+            $table->integer('equipment_quantity');
+
+            $table->integer('responsible_id')->unsigned();
+            $table->foreign('responsible_id')->references('id')->on('responsible')
+            ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->integer('technological_equipment_id')->unsigned();
+            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipment')
+            ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('academic_area');
+    }
+};
