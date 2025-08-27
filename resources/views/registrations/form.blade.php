@@ -44,7 +44,7 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="loan_date"> Fecha del préstamo </label>
-                <input type="datetime" id="loan_date" name="loan_date" class="form-control form-control-alternative"
+                <input type="date" id="loan_date" name="loan_date" class="form-control form-control-alternative"
                     placeholder="Ingrese la fecha del préstamo" value="{{ old('loan_date', $registrations->loan_date) }}">
             </div>
         </div>
@@ -154,13 +154,13 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="loans_id">
+                <label class="form-control-label" for="loan_id">
                     <i class="fas fa-graduation-cap"></i> Préstamos </label>
-                <select name="loans_id" id="loans_id" class="form-control form-control-alternative">
+                <select name="loan_id" id="loan_id" class="form-control form-control-alternative">
                     <option disabled>Seleccione el préstamo</option>
                     @foreach ($loans as $loan)
-                    <option value="{{ $loans->id }}" @selected(old('loans_id', $loans->loans_id) == $loans->id)>
-                        {{ $loans->loan_date }}
+                    <option value="{{ $loan->id }}" @selected(old('loan_id', $loan->loan_id) == $loan->id)>
+                        {{ $loan->username }}
                         </option>
                     @endforeach
                 </select>
@@ -177,7 +177,7 @@
                     <option disabled> Seleccione equipo tecnológico </option>
                     @foreach ($technological_equipments as $technological_equipment)
                         <option value="{{ $technological_equipment->id }}" @selected(old('technological_equipment_id', $technological_equipment->technological_equipment_id) == $technological_equipment->id)>
-                        {{ $technological_equipment->name }}
+                        {{ $technological_equipment->equipment_name }}
                         </option>
                     @endforeach
                 </select>

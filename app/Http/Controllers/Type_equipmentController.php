@@ -14,7 +14,7 @@ class Type_equipmentController extends Controller
      */
     public function index()
     {
-        $type_equipments = Type_equipment::with('technological_equipments')->paginate(5);
+        $type_equipments = Type_equipment::with('technological_equipment')->paginate(5);
         return view('type_equipments.index', compact('type_equipments'));
     }
 

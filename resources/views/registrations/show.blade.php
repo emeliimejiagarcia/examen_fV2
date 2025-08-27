@@ -180,10 +180,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label" for="loans">
+                            <label class="form-control-label" for="loan_id">
                                 <i class="fas fa-user"></i> Préstamos
                             </label>
-                            <p>{{ $registrations->loans->loan_date }}</p>
+                            <p>{{ $registrations->loan->loan_date }}</p>
                         </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label" for="type_equipment">
+                            <label class="form-control-label" for="type_equipment_id">
                                 <i class="fas fa-user"></i> Tipo de Equipo tecnológico
                             </label>
                             <p>{{ $registrations->type_equipment->equipment_name }}</p>

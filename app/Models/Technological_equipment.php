@@ -36,7 +36,7 @@ class Technological_equipment extends Model
 
     public function academic_area()
     {
-        return $this->hasMany(Academic_area::class);
+        return $this->belongsTo(Academic_area::class);
     }
 
     public function loans()
@@ -44,12 +44,12 @@ class Technological_equipment extends Model
         return $this->hasMany(Loans::class);
     }
 
-    public function registration()
+    public function registrations()
     {
         return $this->hasMany(Registration::class);
     }
 
-    public function maintenance_report()
+    public function maintenance_reports()
     {
         return $this->hasMany(Maintenance_report::class);
     }

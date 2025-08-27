@@ -8,7 +8,7 @@
 
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0"> Asignaturas </h3>
+                        <h3 class="mb-0">Equipos Tecnológicos </h3>
                         <a href="{{ route('technological_equipments.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus"></i> Nuevo equipo tecnológico
                         </a>
@@ -31,7 +31,7 @@
                                 <th scope="col"><i class="fas fa-envelop"></i> Código de inventario </th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Categoría tecnológica </th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Proveedor </th>
-
+                                <th scope="col"><i class="fas fa-envelop"></i> Fecha de Registo</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Acciones </th>
                             </tr>
                         </thead>
@@ -52,6 +52,7 @@
                                     <td>{{ $technological_equipment->inventory_code }}</td>
                                     <td>{{ $technological_equipment->technology_category}}</td>
                                     <td>{{ $technological_equipment->vendor->name }}</td>
+                                    <td>{{ $technological_equipment->created_at->format('d/m/Y') }}</td>
 
                                     <td style="white-space: nowrap; display: flex; align-items center;">
                                         <a href="{{ route('technological_equipments.show', $technological_equipment->id) }}" class="btn btn-primary btn-sm"

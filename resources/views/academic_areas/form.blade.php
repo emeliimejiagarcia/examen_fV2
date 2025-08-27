@@ -124,12 +124,11 @@
             <div class="form-group">
                 <label class="form-control-label" for="technological_equipment_id">
                     <i class="fas fa-graduation-cap"></i> Equipo Tecnológico </label>
-
-                <select name="technological_equipment_id" id="technological_equipment_id" class="form-control form-control-alternative">
+                    <select name="technological_equipment_id" id="technological_equipment_id" class="form-control form-control-alternative">
                     <option disabled>Seleccione el equipo asignado</option>
                     @foreach ($technological_equipments as $technological_equipment)
                         <option value="{{ $technological_equipment->id }}" @selected(old('technological_equipment_id', $technological_equipment->technological_equipment_id) == $technological_equipment->id)>
-                            {{ $technological_equipment->name }}
+                            {{ $technological_equipment->equipment_name }}
                         </option>
                     @endforeach
                 </select>

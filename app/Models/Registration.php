@@ -17,11 +17,14 @@ class Registration extends Model
     'date_time',
     'loan_date',
     'return_date',
+    'loan_duration',
+    'user_type',
+    'equipment_name',
     'equipment_number',
     'serial_number',
     'condition_loan',
     'vendor_id',
-    'loans_id',
+    'loan_id',
     'technological_equipment_id',
     'type_equipment_id'];
 
@@ -30,14 +33,14 @@ class Registration extends Model
         return $this->belongsTo(Vendor::class);
     }
 
-    public function loans()
+    public function loan()
     {
-        return $this->hasMany(Loans::class);
+        return $this->belongsTo(Loans::class);
     }
 
     public function technological_equipment()
     {
-        return $this->hasMany(Technological_equipment::class);
+        return $this->belongsTo(Technological_equipment::class);
     }
 
     public function type_equipment()

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('academic_area', function (Blueprint $table) {
+        Schema::create('academic_areas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('area_name');
             $table->string('area_code')->unique();
@@ -22,11 +22,11 @@ return new class extends Migration
             $table->integer('equipment_quantity');
 
             $table->integer('responsible_id')->unsigned();
-            $table->foreign('responsible_id')->references('id')->on('responsible')
+            $table->foreign('responsible_id')->references('id')->on('responsibles')
             ->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('technological_equipment_id')->unsigned();
-            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipment')
+            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipments')
             ->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
@@ -38,6 +38,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('academic_area');
+        Schema::dropIfExists('academic_areas');
     }
 };

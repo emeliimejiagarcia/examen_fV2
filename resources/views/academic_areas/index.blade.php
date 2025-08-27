@@ -43,7 +43,6 @@
                                     <td>{{ $academic_area->area_type }}</td>
                                     <td>{{ $academic_area->description }}</td>
                                     <td>{{ $academic_area->equipment_quantity }}</td>
-
                                     <td>{{ $academic_area->responsible->name }}</td>
                                     <td>{{ $academic_area->technological_equipment->equipment_name }}</td>
 

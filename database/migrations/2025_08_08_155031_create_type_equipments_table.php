@@ -11,21 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('type_equipment', function (Blueprint $table) {
+        Schema::create('type_equipments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('equipment_name');
             $table->text('description');
-            $table->string('category');
             $table->date('loan_time');
             $table->decimal('worth');
-            $table->decimal('power_consumption');
+            $table->string('power_consumption');
             $table->string('technology_category');
             $table->string('code')->unique();
             $table->string('type_status');
             $table->date('creation_date');
 
             $table->integer('technological_equipment_id')->unsigned();
-            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipment')
+            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipments')
             ->onDelete('cascade')->onUpdate('cascade');
 
 
@@ -39,6 +38,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('type_equipment');
+        Schema::dropIfExists('type_equipments
+        ');
     }
 };

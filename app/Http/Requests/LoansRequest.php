@@ -28,12 +28,12 @@ class LoansRequest extends FormRequest
             'delivery_observation'=> 'required|string|min:10|max:255',
             'return_observation'=> 'required|string|min:10|max:255',
             'loan_date' => 'required|date',
-            'loan_duration'=> 'required|min:30',
+            'loan_duration'=> 'required|min:5',
             'username'=> 'required|string|max:255',
             'user_type'=> 'required|string|min:5|max:255',
             'area'=> 'required|string|min:5|max:255',
             'academic_role'=> 'required|string|min:5|max:30',
-            'contact_phone' => ['required', 'string', 'max:15', Rule::unique('loans')->ignore($this->loans)],
+            'contact_phone' => ['required', 'string', 'max:15', Rule::unique('loans')->ignore($this->loan)],
             'user_address'=> 'required|string|max:255',
             'equipment_name'=> 'required|string|min:5|max:255',
             'equipment_type'=> 'required|string|min:5|max:255',
@@ -71,7 +71,7 @@ class LoansRequest extends FormRequest
             'loan_date.date' => 'La fecha de préstamo debe ser una fecha válida.',
 
             'loan_duration.required' => 'La duración del préstamo es obligatoria.',
-            'loan_duration.min' => 'La duración del préstamo debe ser al menos 30 cáracteres.',
+            'loan_duration.min' => 'La duración del préstamo debe ser al menos 5 cáracteres.',
 
             'username.required' => 'El nombre de usuario es obligatorio.',
             'username.string' => 'El nombre de usuario debe tener solo carácteres.',

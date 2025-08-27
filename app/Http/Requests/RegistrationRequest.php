@@ -24,8 +24,8 @@ class RegistrationRequest extends FormRequest
         return [
             'username' => 'required|string|min:5|max:255',
             'current_condition' => 'required|string|max:255',
-            'last_update' => 'required|datetime',
-            'date_time' => 'required|datetime',
+            'last_update' => 'required|date',
+            'date_time' => 'required|date',
             'loan_date' => 'required|date',
             'return_date' => 'required|date',
             'loan_duration' => 'required|string|min:6',
@@ -35,7 +35,7 @@ class RegistrationRequest extends FormRequest
             'serial_number' => 'required|string|max:255',
             'condition_loan' => 'required|string|min:20|max:255',
             'vendor_id' => 'required',
-            'loans_id' => 'required',
+            'loan_id' => 'required',
             'technological_equipment_id' => 'required',
             'type_equipment_id' => 'required'];
     }
@@ -53,10 +53,10 @@ class RegistrationRequest extends FormRequest
             'current_condition.max' => 'La condición actual tiene un máximo de 255 cáracteres.',
 
             'last_update.required' => 'La última actualización es obligatoria.',
-            'last_update.datetime' => 'La última actualización debe ser una fecha y hora válida.',
+            'last_update.date' => 'La última actualización debe ser una fecha y hora válida.',
 
             'date_time.required' => 'La fecha y hora son obligatorias.',
-            'date_time.datetime' => 'La fecha y hora deben ser válidas.',
+            'date_time.date' => 'La fecha y hora deben ser válidas.',
 
             'loan_date.required' => 'La fecha del préstamo es obligatoria.',
             'loan_date.date' => 'La fecha del préstamo debe ser una fecha válida.',
@@ -99,7 +99,7 @@ class RegistrationRequest extends FormRequest
 
             'vendor_id.required' => 'El nombre del proveedor es obligatorio.',
 
-            'loans_id.required' => 'La información del préstamo es requerido.',
+            'loan_id.required' => 'La información del préstamo es requerido.',
 
             'technological_equipment_id.required' => 'El nombre del equipo tecnológico es requerido.',
 

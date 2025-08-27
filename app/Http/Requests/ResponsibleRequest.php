@@ -23,15 +23,15 @@ class ResponsibleRequest extends FormRequest
     {
         return [
             'name'=> 'required|string|min:5|max:255',
-            'age'=> 'required|integer|max:3',
+            'age'=> 'required|string|max:3',
             'mail'=> ['required','string', 'max:255', Rule::unique('responsibles')->ignore($this->responsible)],
             'identity_card'=> ['required','string', 'max:18', Rule::unique('responsibles')->ignore($this->responsible)],
             'phone_number'=> ['required','nullable','string', 'max:15', Rule::unique('responsibles')->ignore($this->responsible)],
-            'departament'=> 'required|string|min:5|max:255',
+            'departament'=> 'required|string|min:3|max:255',
             'gender'=> 'required|string|min:5|max:12',
             'nationality'=> 'required|string|min:5|max:255',
             'address'=> 'required|string|min:10|max:255',
-            'academic_role'=> 'required|string|min:10|max:255',
+            'academic_role'=> 'required|string|min:5|max:255',
             'registration_date'=> 'required|date',
         ];
     }
@@ -44,7 +44,8 @@ class ResponsibleRequest extends FormRequest
             'name.max' => 'El campo de nombre completo tiene un máximo de 255 cáracteres.',
 
             'age.required' => 'La edad es obligatoria.',
-            'age.integer' => 'La edad solo debe se permiten números.',
+            'age.string' => 'La edad solo debe se permiten números.',
+            'age.min' => 'La edad es mínimo de 2 dígitos.',
             'age.max' => 'La edad no puede exceder los 3 dígitos.',
 
             'mail.required' => 'El correo electrónico es obligatorio.',
@@ -64,7 +65,7 @@ class ResponsibleRequest extends FormRequest
 
             'departament.required' => 'El departamento es obligatorio.',
             'departament.string' => 'El nombre del departamento debe tener solo carácteres.',
-            'departament.min' => 'El nombre del departamento debe tener al menos 5 cáracteres.',
+            'departament.min' => 'El nombre del departamento debe tener al menos 3 cáracteres.',
             'departament.max' => 'El nombre del departamento tiene un máximo de 255 cáracteres.',
 
             'gender.required' => 'El género es obligatorio.',
@@ -84,7 +85,7 @@ class ResponsibleRequest extends FormRequest
 
             'academic_role.required' => 'El rol académico es obligatorio.',
             'academic_role.string' => 'El rol académico debe tener solo carácteres.',
-            'academic_role.min' => 'El rol académico debe tener al menos 10 cáracteres.',
+            'academic_role.min' => 'El rol académico debe tener al menos 5 cáracteres.',
             'academic_role.max' => 'El rol académico tiene un máximo de 255 cáracteres.',
 
             'registration_date.required' => 'La fecha de registro es obligatoria.',

@@ -34,11 +34,11 @@ return new class extends Migration
 
 
             $table->integer('responsible_id')->unsigned();
-            $table->foreign('responsible_id')->references('id')->on('responsible')
+            $table->foreign('responsible_id')->references('id')->on('responsibles')
             ->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('technological_equipment_id')->unsigned();
-            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipment')
+            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipments')
             ->onDelete('cascade')->onUpdate('cascade');
 
 

@@ -31,7 +31,7 @@ class Loan_historyRequest extends FormRequest
             'condition' => 'required|string|min:20|max:255',
             'loan_code' => ['required', 'string', 'max:255', Rule::unique('loan_history')->ignore($this->loan_history)],
             'description' => 'required|string|min:10|max:255',
-            'loans_id' => 'required',
+            'loan_id' => 'required',
         ];
     }
 
@@ -81,8 +81,8 @@ class Loan_historyRequest extends FormRequest
             'description.min' => 'La descripción debe tener al menos 10 cáracteres.',
             'description.max' => 'La descripción tiene un máximo de 255 cáracteres.',
 
-            'loans_id.required' => 'La información del préstamo es requerido.',
-            
+            'loan_id.required' => 'La información del préstamo es requerido.',
+
 
         ];
     }

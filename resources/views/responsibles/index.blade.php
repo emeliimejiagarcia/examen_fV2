@@ -8,7 +8,7 @@
 
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0"> Responsable </h3>
+                        <h3 class="mb-0"> Responsables </h3>
                         <a href="{{ route('responsibles.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus"></i> Nuevo Responsable
                         </a>
@@ -25,8 +25,8 @@
                                 <th scope="col"><i class="fas fa-envelop"></i> Cédula</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Número Telefónico</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Departamento</th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Nacionalidad</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Género</th>
+                                <th scope="col"><i class="fas fa-envelop"></i> Nacionalidad</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Dirección</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Rol Academico</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Fecha de Registo</th>
@@ -82,9 +82,7 @@
                                         {{ $responsible->registration_date }}
                                     </td>
 
-                                    <td>
-                                        {{ $responsible->created_at->format('d/m/Y') }}
-                                    </td>
+
 
 
                                     <td style="white-space: nowrap; display: flex; align-items center;">

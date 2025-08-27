@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('loan_history', function (Blueprint $table) {
+        Schema::create('loan_historys', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
             $table->string('equipment_name');
@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('loan_code')->unique();
             $table->string('description');
 
-             $table->integer('loans_id')->unsigned();
-            $table->foreign('loans_id')->references('id')->on('loans')
+             $table->integer('loan_id')->unsigned();
+            $table->foreign('loan_id')->references('id')->on('loans')
             ->onDelete('cascade')->onUpdate('cascade');
 
             $table->timestamps();
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('loan_history');
+        Schema::dropIfExists('loan_historys');
     }
 };

@@ -8,7 +8,7 @@
 
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0">Proveedor</h3>
+                        <h3 class="mb-0">Proveedores</h3>
                         <a href="{{ route('vendors.create') }}" class="btn btn-primary">
                             <i class="fas fa-plus"></i> Nuevo Proveedor
                         </a>
@@ -30,6 +30,7 @@
                                 <th scope="col"><i class="fas fa-envelop"></i> Edad</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Cédula de Identidad</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Autorizacón de Proveedor</th>
+                                <th scope="col"><i class="fas fa-envelop"></i> Fecha de Registo</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Acciones</th>
 
                             </tr>

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('registration', function (Blueprint $table) {
+        Schema::create('registrations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('username');
             $table->string('current_condition');
@@ -27,19 +27,19 @@ return new class extends Migration
             $table->string('condition_loan');
 
             $table->integer('vendor_id')->unsigned();
-            $table->foreign('vendor_id')->references('id')->on('vendor')
+            $table->foreign('vendor_id')->references('id')->on('vendors')
             ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->integer('loans_id')->unsigned();
-            $table->foreign('loans_id')->references('id')->on('loans')
+            $table->integer('loan_id')->unsigned();
+            $table->foreign('loan_id')->references('id')->on('loans')
             ->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('technological_equipment_id')->unsigned();
-            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipment')
+            $table->foreign('technological_equipment_id')->references('id')->on('technological_equipments')
             ->onDelete('cascade')->onUpdate('cascade');
 
             $table->integer('type_equipment_id')->unsigned();
-            $table->foreign('type_equipment_id')->references('id')->on('type_equipment')
+            $table->foreign('type_equipment_id')->references('id')->on('type_equipments')
             ->onDelete('cascade')->onUpdate('cascade');
 
 
@@ -52,6 +52,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('registration');
+        Schema::dropIfExists('registrations');
     }
 };

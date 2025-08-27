@@ -21,15 +21,14 @@
                             <tr>
                                 <th scope="col"><i class="fas fa-list-ol"></i> Nombre del equipo </th>
                                 <th scope="col"><i class="fas fa-user"></i> Descripción del equipo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Categoría del equipo</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Fecha de préstamo</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Valor del equipo</th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Consumo de energía </th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Categoría del equipo </th>
                                 <th scope="col"><i class="fas fa-user"></i> Código del equipo  </th>
                                 <th scope="col"><i class="fas fa-user"></i> Estado del equipo </th>
-                                <th scope="col"><i class="fas fa-user"></i> Fecha de creación
                                 <th scope="col"><i class="fas fa-user"></i> Equipo Tecnológico </th>
+                                <th scope="col"><i class="fas fa-user"></i> Fecha de creación </th>
                                 <th scope="col"><i class="fas fa-envelop"></i> Acciones </th>
                             </tr>
                         </thead>
@@ -40,16 +39,14 @@
 
                                     <td>{{ $type_equipment->equipment_name }}</td>
                                     <td>{{ $type_equipment->description }}</td>
-                                    <td>{{ $type_equipment->category }}</td>
                                     <td>{{ $type_equipment->loan_time }}</td>
                                     <td>{{ $type_equipment->worth }}</td>
                                     <td>{{ $type_equipment->power_consumption }}</td>
                                     <td>{{ $type_equipment->technology_category }}</td>
                                     <td>{{ $type_equipment->code }}</td>
                                     <td>{{ $type_equipment->type_status }}</td>
-                                    <td>{{ $type_equipment->creation_date }}</td>
                                     <td>{{ $type_equipment->technological_equipment->equipment_name }}</td>
-
+                                    <td>{{ $type_equipment->creation_date }}</td>
 
 
 

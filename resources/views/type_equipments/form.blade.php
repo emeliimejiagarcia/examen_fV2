@@ -20,15 +20,6 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="form-group">
-                <label class="form-control-label" for="category"> Categoría del equipo </label>
-                <input type="text" id="category" name="category" class="form-control form-control-alternative"
-                    placeholder="ingrese la categoría del equipo" value="{{ old('category', $type_equipments->category) }}">
-            </div>
-        </div>
-    </div>
 
      <div class="row">
         <div class="col-lg-6">
@@ -165,12 +156,11 @@
             <div class="form-group">
                 <label class="form-control-label" for="technological_equipment_id">
                     <i class="fas fa-graduation-cap"></i> Equipo Tecnológico </label>
-
-                <select name="technological_equipment_id" id="technological_equipment_id" class="form-control form-control-alternative">
-                    <option disabled>Seleccione el equipo tecnológico</option>
+                    <select name="technological_equipment_id" id="technological_equipment_id" class="form-control form-control-alternative">
+                    <option disabled> Seleccione el equipo tecnológico </option>
                     @foreach ($technological_equipments as $technological_equipment)
                         <option value="{{ $technological_equipment->id }}" @selected(old('technological_equipment_id', $technological_equipment->technological_equipment_id) == $technological_equipment->id)>
-                            {{ $technological_equipment->name }}
+                            {{ $technological_equipment->equipment_name }}
                         </option>
                     @endforeach
                 </select>

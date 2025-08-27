@@ -20,7 +20,7 @@
             </div>
 
             <div class="card-body">
-                <h6 class="heading-small text-muted mb-4"> Registro de Préstamos de Equipos Tecnológicos</h6>
+                <h6 class="heading-small text-muted mb-4"> Registro de Equipos Tecnológicos</h6>
                 <div class="pl-lg-4">
 
                     <div class="row">
@@ -147,7 +147,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="vendor"class="form-control-label">
+                                <label for="vendor_id"class="form-control-label">
                                     <i class="fas fa-user"></i> Proveedor
                                 </label>
                                 <p>{{ $technological_equipments->vendor->name }}</p>

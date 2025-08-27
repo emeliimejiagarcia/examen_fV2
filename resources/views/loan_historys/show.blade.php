@@ -125,7 +125,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label" for="loans">
+                            <label class="form-control-label" for="loan_id">
                                 <i class="fas fa-user"></i> Préstamos
                             </label>
                             <p>{{ $loan_historys->loans->loan_date }}</p>

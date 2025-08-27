@@ -24,13 +24,13 @@ class VendorRequest extends FormRequest
         return [
             'name'=> 'required|string|min:5|max:255',
             'point_contact'=> 'required|string|min:5|max:255',
-            'phone_number'=> ['nullable', 'string', 'min:8', Rule::unique('vendors')->ignore($this->vendor)],
+            'phone_number'=> ['required', 'string', 'min:8', Rule::unique('vendors')->ignore($this->vendor)],
             'mail'=> ['required','string', 'max:255', Rule::unique('vendors')->ignore($this->vendor)],
             'delivered_products'=> 'required|integer|min:1',
             'warranty'=> 'required|string|min:5|max:255',
             'address'=> 'required|string|min:10|max:255',
             'department'=> 'required|string|min:5|max:20',
-            'age'=> 'required|integer|max:3',
+            'age'=> 'required|string|max:3',
             'identity_card'=> ['required','string', 'max:18', Rule::unique('vendors')->ignore($this->vendor)],
             'authorization_provide'=> 'required|string|max:255',
         ];
@@ -49,6 +49,7 @@ class VendorRequest extends FormRequest
             'point_contact.min' => 'El nombre del punto de contacto debe tener al menos 5 cáracteres.',
             'point_contact.max' => 'El nombre del punto de contacto tiene un máximo de 255 cáracteres.',
 
+            'phone_number.required' => 'El número es requerido.',
             'phone_number.string' => 'El número de teléfono debe tener solo carácteres.',
             'phone_number.min' => 'El número de teléfono debe tener al menos 8 cáracteres.',
             'phone_number.unique' => 'El número de teléfono ya está en uso.',
@@ -78,7 +79,7 @@ class VendorRequest extends FormRequest
             'department.max' => 'el departamento tiene un máximo de 20 cáracteres.',
 
             'age.required' => 'La edad es obligatoria.',
-            'age.integer' => 'La edad solo debe se permiten números.',
+            'age.string' => 'La edad solo debe se permiten números.',
             'age.max' => 'La edad no puede exceder los 3 dígitos.',
 
             'identity_card.required' => 'La cédula de identidad es obligatoria.',

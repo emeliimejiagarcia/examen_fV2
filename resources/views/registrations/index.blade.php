@@ -55,9 +55,9 @@
                                     <td>{{ $registration->equipment_number}}
                                     <td>{{ $registration->serial_number}}
                                     <td>{{ $registration->condition_loan}}
-                                    <td>{{ $registration->vendor_id->name }}</td>
-                                    <td>{{ $registration->loans_id->loan_date }}</td>
-                                    <td>{{ $registration->technological_equipment_id->equipment_name}}</td>
+                                    <td>{{ $registration->vendor->name }}</td>
+                                    <td>{{ $registration->loan->loan_date }}</td>
+                                    <td>{{ $registration->technological_equipment->equipment_name}}</td>
                                     <td>{{ $registration->type_equipment->equipment_name}}</td>
 
 

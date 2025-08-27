@@ -13,7 +13,7 @@ class Loan_historyController extends Controller
      */
     public function index()
     {
-        $loan_historys = Loan_history::with('loans')->paginate(5);
+        $loan_historys = Loan_history::with('loan')->paginate(5);
         return view ('loan_historys.index',compact('loan_historys'));
     }
 

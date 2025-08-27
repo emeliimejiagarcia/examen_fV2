@@ -23,6 +23,16 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
+                <label class="form-control-label" for="phone_number">Número telefónico</label>
+                <input type="text" id="phone_number" name="phone_number" class="form-control form-control-alternative"
+                placeholder="Ingrese su número telefónico" value="{{ old('phone_number', $vendors->phone_number) }}">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group">
                 <label class="form-control-label" for="mail"> Correo electrónico </label>
                 <input type="mail" id="mail" name="mail" class="form-control form-control-alternative"
                 placeholder="Ingrese su correo electrónico" value="{{ old('mail', $vendors->mail) }}">

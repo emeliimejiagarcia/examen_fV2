@@ -259,8 +259,7 @@
                     <div class="form-group">
                         <label class="form-control-label" for="responsible_id">
                             <i class="fas fa-graduation-cap"></i> Responsable </label>
-
-                        <select name="responsible_id" id="responsible_id" class="form-control form-control-alternative">
+                            <select name="responsible_id" id="responsible_id" class="form-control form-control-alternative">
                             <option disabled>Seleccione al responsable</option>
                             @foreach ($responsibles as $responsible)
                                 <option value="{{ $responsible->id }}" @selected(old('responsible_id', $responsible->responsible_id) == $responsible->id)>

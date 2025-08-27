@@ -5,7 +5,7 @@
             <div class="form-group">
                 <label class="form-control-label" for="mark"> Marca del Equipo</label>
                 <input type="text" id="mark" name="mark" class="form-control form-control-alternative"
-                    placeholder="Ingresar nombre de asignatura"
+                    placeholder="Ingresar marca del equipo"
                     value="{{ old('mark', $technological_equipments->mark) }}">
             </div>
         </div>
@@ -120,7 +120,7 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="entry_date"> Fecha de Entrada </label>
-                <input type="datetime-local" id="entry_date" name="entry_date" class="form-control form-control-alternative"
+                <input type="date" id="entry_date" name="entry_date" class="form-control form-control-alternative"
                     placeholder="Ingrese la fecha de entrada" value="{{ old('entry_date', $technological_equipments->entry_date) }}">
             </div>
         </div>
@@ -150,8 +150,8 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="availability">Disponibilidad del equipo tecnológico</label>
-                <input type="number" id="availability" name="availability" class="form-control form-control-alternative"
+                <label class="form-control-label" for="availability">Disponibilidad del equipos tecnológicos</label>
+                <input type="text" id="availability" name="availability" class="form-control form-control-alternative"
                     placeholder="Cantidad de equipos disponibles para uso" value="{{ old('availability', $technological_equipments->availability) }}">
             </div>
         </div>

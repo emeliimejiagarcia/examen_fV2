@@ -29,7 +29,7 @@ class Academic_area extends Model
 
     public function technological_equipment()
     {
-        return $this->hasMany(Technological_equipment::class);
+        return $this->belongsTo(Technological_equipment::class);
     }
 
 

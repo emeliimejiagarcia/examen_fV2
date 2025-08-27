@@ -28,7 +28,7 @@ class Maintenance_report extends Model
         return $this->belongsTo(Responsible::class);
     }
 
-    public function technological_equipment()
+    public function technological_equipments()
     {
         return $this->hasMany(Technological_equipment::class);
     }

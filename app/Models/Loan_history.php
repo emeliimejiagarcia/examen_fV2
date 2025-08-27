@@ -18,7 +18,7 @@ class Loan_history extends Model
     'condition',
     'loan_code',
     'description',
-    'loans_id'];
+    'loan_id'];
 
     public function loans()
     {

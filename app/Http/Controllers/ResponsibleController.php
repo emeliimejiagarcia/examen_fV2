@@ -31,7 +31,7 @@ class ResponsibleController extends Controller
      */
     public function store(ResponsibleRequest $request)
     {
-        Responsible::create($request-> validated());
+        Responsible::create($request->validated());
         return redirect()->route('responsibles.index')->with('success', 'Responsable creado correctamente.');
     }
 

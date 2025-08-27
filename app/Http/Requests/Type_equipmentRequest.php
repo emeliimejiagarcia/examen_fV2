@@ -23,11 +23,10 @@ class Type_equipmentRequest extends FormRequest
     {
         return [
             'equipment_name'=> 'required|string|min:5|max:255',
-            'description'=> 'required|text|min:10|max:255',
-            'category'=> 'required|string|min:5|max:255',
+            'description'=> 'required|string|min:10|max:255',
             'loan_time'=> 'required|date|max:30',
-            'worth'=> 'required|decimal|min:2',
-            'power_consumption'=> 'required|decimal|min:5|max:255',
+            'worth'=> 'required',
+            'power_consumption'=> 'required|string',
             'technology_category'=> 'required|string|min:5|max:255',
             'code'=> ['required', 'string', 'max:255', Rule::unique('type_equipments')->ignore($this->type_equipment)],
             'type_status'=> 'required|string|max:255',
@@ -49,23 +48,15 @@ class Type_equipmentRequest extends FormRequest
             'description.min' => 'La descripción debe tener al menos 10 cáracteres.',
             'description.max' => 'La descripción tiene un máximo de 255 cáracteres.',
 
-            'category.required' => 'La categoría es obligatoria.',
-            'category.string' => 'La categoría debe tener solo carácteres.',
-            'category.min' => 'La categoría debe tener al menos 5 cáracteres.',
-            'category.max' => 'La categoría tiene un máximo de 255 cáracteres.',
 
             'loan_time.required' => 'El tiempo de préstamo es obligatorio.',
             'loan_time.date' => 'El tiempo de préstamo debe ser una fecha válida.',
             'loan_time.max' => 'El tiempo de préstamo no puede exceder los 30 cáracteres.',
 
             'worth.required' => 'El valor del equipo es obligatorio.',
-            'worth.decimal' => 'El valor del equipo debe ser un número decimal.',
-            'worth.min' => 'El valor del equipo debe ser al menos 2 cáracteres.',
 
             'power_consumption.required' => 'El consumo de energía es obligatorio.',
-            'power_consumption.decimal' => 'El consumo de energía debe ser un número decimal.',
-            'power_consumption.min' => 'El consumo de energía debe tener al menos 5 cáracteres.',
-            'power_consumption.max' => 'El consumo de energía tiene un máximo de 255 cáracteres.',
+            'power_consumption.string' => 'El consumo de energía debe tener solo carácteres.',
 
             'technology_category.required' => 'La categoría tecnológica es obligatoria.',
             'technology_category.string' => 'La categoría tecnológica debe tener solo carácteres.',

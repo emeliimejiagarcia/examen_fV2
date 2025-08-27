@@ -62,54 +62,71 @@
     <!-- Navigation -->
     <ul class= "navbar-nav mb-md-3">
 
-        <li class="nav-item {{ Request::route()->named('students.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('students.index') ? 'active' : '' }}"
-                href="{{ route('students.index') }}" wire:navigate>
-                <i class="fa-solid fa-user"></i> Estudiantes
+        <li class="nav-item {{ Request::route()->named('responsibles.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('responsibles.index') ? 'active' : '' }}"
+                href="{{ route('responsibles.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Responsables
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('tuitions.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('tuitions.index') ? 'active' : '' }}"
-                href="{{ route('tuitions.index') }}" wire:navigate>
-                <i class="fa-solid fa-file"></i> Matrículas
+        <li class="nav-item {{ Request::route()->named('vendors.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('vendors.index') ? 'active' : '' }}"
+                href="{{ route('vendors.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Proveedores
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('careers.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('careers.index') ? 'active' : '' }}"
-                href="{{ route('careers.index') }}" wire:navigate>
-                <i class="fa-solid fa-building-columns"></i> Carreras
+        <li class="nav-item {{ Request::route()->named('technological_equipments.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('technological_equipments.index') ? 'active' : '' }}"
+                href="{{ route('technological_equipments.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Equipos Tecnológicos
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('teachers.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('teachers.index') ? 'active' : '' }}"
-                href="{{ route('teachers.index') }}" wire:navigate>
-                <i class="fa-solid fa-person-chalkboard"></i> Docentes
+        <li class="nav-item {{ Request::route()->named('type_equipments.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('type_equipments.index') ? 'active' : '' }}"
+                href="{{ route('type_equipments.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Tipos de Equipos Tecnológicos
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('sections.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('sections.index') ? 'active' : '' }}"
-                href="{{ route('sections.index') }}" wire:navigate>
-                <i class="fa-solid fa-puzzle-piece"></i> Secciónes
+        <li class="nav-item {{ Request::route()->named('academic_areas.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('academic_areas.index') ? 'active' : '' }}"
+                href="{{ route('academic_areas.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Áreas Académicas
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('subjects.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('subjects.index') ? 'active' : '' }}"
-                href="{{ route('subjects.index') }}" wire:navigate>
-                <i class="fa-solid fa-objects-column"></i> Asignatura
+        <li class="nav-item {{ Request::route()->named('loans.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('loans.index') ? 'active' : '' }}"
+                href="{{ route('loans.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Préstamos
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('grades.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('grades.index') ? 'active' : '' }}"
-                href="{{ route('grades.index') }}" wire:navigate>
-                <i class="fa-solid fa-objects-column"></i> Nota
+        <li class="nav-item {{ Request::route()->named('registrations.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('registrations.index') ? 'active' : '' }}"
+                href="{{ route('registrations.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Registros
             </a>
         </li>
+
+        <li class="nav-item {{ Request::route()->named('loan_historys.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('loan_historys.index') ? 'active' : '' }}"
+                href="{{ route('loan_historys.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Historial de Préstamos
+            </a>
+        </li>
+
+        <li class="nav-item {{ Request::route()->named('maintenance_reports.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('maintenance_reports.index') ? 'active' : '' }}"
+                href="{{ route('maintenance_reports.index') }}" wire:navigate>
+                <i class="fa-solid fa-user"></i> Informes de Mantenimiento
+            </a>
+        </li>
+
+
+
 
 
 

@@ -41,12 +41,12 @@ class Loans extends Model
         return $this->belongsTo(Technological_equipment::class);
     }
 
-    public function registration()
+    public function registrations()
     {
         return $this->hasMany(Registration::class);
     }
 
-    public function loan_history()
+    public function loan_histories()
     {
         return $this->hasMany(Loan_history::class);
     }

@@ -22,15 +22,15 @@ class Technological_equipmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'mark'=> 'required|string|min:5|max:255',
+            'mark'=> 'required|string|min:2|max:255',
             'equipment_name'=> 'required|string|min:5|max:255',
             'serial_number'=> ['required','string', 'max:255', Rule::unique('technological_equipments')->ignore($this->technological_equipment)],
-            'condition'=> 'required|string|min:10|max:255',
+            'condition'=> 'required|string|min:5|max:255',
             'location'=> 'required|string|min:5|max:255',
             'entry_date'=> 'required|date',
             'brand'=> 'required|string|min:5|max:255',
             'acquisition_date'=> 'required|date',
-            'availability'=> 'required|string|min:5|max:255',
+            'availability'=> 'required|string|min:1|max:255',
             'inventory_code'=> ['required','string', 'max:255', Rule::unique('technological_equipments')->ignore($this->technological_equipment)],
             'technology_category'=> 'required|string|min:10',
             'vendor_id'=> 'required'
@@ -43,7 +43,7 @@ class Technological_equipmentRequest extends FormRequest
         return[
             'mark.required' => 'La marca es obligatoria.',
             'mark.string' => 'La marca debe tener solo carácteres.',
-            'mark.min' => 'La marca debe tener al menos 5 cáracteres.',
+            'mark.min' => 'La marca debe tener al menos 2 cáracteres.',
             'mark.max' => 'La marca tiene un máximo de 255 cáracteres.',
 
             'equipment_name.required' => 'El nombre del equipo es obligatorio.',
@@ -58,7 +58,7 @@ class Technological_equipmentRequest extends FormRequest
 
             'condition.required' => 'La condición es obligatoria.',
             'condition.string' => 'La condición debe tener solo carácteres.',
-            'condition.min' => 'La condición debe tener al menos 10 cáracteres.',
+            'condition.min' => 'La condición debe tener al menos 5 cáracteres.',
             'condition.max' => 'La condición tiene un máximo de 255 cáracteres.',
 
             'location.required' => 'La ubicación es obligatoria.',
@@ -81,7 +81,7 @@ class Technological_equipmentRequest extends FormRequest
 
             'availability.required' => 'La disponibilidad del equipo es obligatoria.',
             'availability.string' => 'La disponibilidad del equipo debe tener solo carácteres.',
-            'availability.min' => 'La disponibilidad del equipo debe tener al menos 5 cáracteres.',
+            'availability.min' => 'La disponibilidad del equipo debe tener al menos 1 equipo disponible.',
             'availability.max' => 'La disponibilidad del equipo tiene un máximo de 255 cáracteres.',
 
             'inventory_code.required' => 'El código de inventario es obligatorio.',

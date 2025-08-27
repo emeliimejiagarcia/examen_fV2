@@ -27,7 +27,7 @@ class Academic_areaRequest extends FormRequest
             'location' => 'required|string|min:10|max:255',
             'equipment_coordinator' => 'required|string|min:5|max:255',
             'area_type' => 'required|string|min:5|max:255',
-            'description' => 'required|text|min:10|max:255',
+            'description' => 'required|string|min:10|max:255',
             'equipment_quantity' => 'required|integer|min:1',
             'responsible_id' => 'required',
             'technological_equipment_id' => 'required'
@@ -63,7 +63,7 @@ class Academic_areaRequest extends FormRequest
             'area_type.max' => 'El tipo de área tiene un máximo de 255 cáracteres.',
 
             'description.required' => 'La descripción es obligatoria.',
-            'description.text' => 'La descripción debe ser un texto.',
+            'description.string' => 'La descripción debe ser un texto.',
             'description.min' => 'La descripción debe tener al menos 10 cáracteres.',
             'description.max' => 'La descripción tiene un máximo de 255 cáracteres.',
 

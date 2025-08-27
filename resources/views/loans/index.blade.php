@@ -8,9 +8,9 @@
 
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0"> Matrículas </h3>
+                        <h3 class="mb-0"> Préstamos </h3>
                         <a href="{{ route('loans.create') }}" class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Nueva Matrícula
+                            <i class="fas fa-plus"></i> Nuevo Préstamo
                         </a>
                     </div>
                 </div>
@@ -49,41 +49,41 @@
                             @foreach ($loans as $loan)
                                 <tr>
 
-                                    <td>{{ $loans->departure_date }}</td>
-                                    <td>{{ $loans->expected_date }}</td>
-                                    <td>{{ $loans->delivery_date }}</td>
-                                    <td>{{ $loans->delivery_observation }}</td>
-                                    <td>{{ $loans->return_observation }}</td>
-                                    <td>{{ $loans->loan_date }}</td>
-                                    <td>{{ $loans->loan_duration }}</td>
-                                    <td>{{ $loans->username }}</td>
-                                    <td>{{ $loans->user_type }}</td>
-                                    <td>{{ $loans->area }}</td>
-                                    <td>{{ $loans->academic_role }}</td>
-                                    <td>{{ $loans->contact_phone }}</td>
-                                    <td>{{ $loans->user_address }}</td>
-                                    <td>{{ $loans->equipment_name }}</td>
-                                    <td>{{ $loans->equipment_type }}</td>
-                                    <td>{{ $loans->brand }}</td>
-                                    <td>{{ $loans->model }}</td>
-                                    <td>{{ $loans->condition_loan }}</td>
-                                    <td>{{ $loans->responsible->name }}</td>
-                                    <td>{{ $loans->technological_equipment->equipment_name }}</td>
+                                    <td>{{ $loan->departure_date }}</td>
+                                    <td>{{ $loan->expected_date }}</td>
+                                    <td>{{ $loan->delivery_date }}</td>
+                                    <td>{{ $loan->delivery_observation }}</td>
+                                    <td>{{ $loan->return_observation }}</td>
+                                    <td>{{ $loan->loan_date }}</td>
+                                    <td>{{ $loan->loan_duration }}</td>
+                                    <td>{{ $loan->username }}</td>
+                                    <td>{{ $loan->user_type }}</td>
+                                    <td>{{ $loan->area }}</td>
+                                    <td>{{ $loan->academic_role }}</td>
+                                    <td>{{ $loan->contact_phone }}</td>
+                                    <td>{{ $loan->user_address }}</td>
+                                    <td>{{ $loan->equipment_name }}</td>
+                                    <td>{{ $loan->equipment_type }}</td>
+                                    <td>{{ $loan->brand }}</td>
+                                    <td>{{ $loan->model }}</td>
+                                    <td>{{ $loan->condition_loan }}</td>
+                                    <td>{{ $loan->responsible->name }}</td>
+                                    <td>{{ $loan->technological_equipment->equipment_name }}</td>
 
 
 
 
                                     <td style="white-space: nowrap; display: flex; align-items center;">
-                                        <a href="{{ route('loans.show', $loans) }}" class="btn btn-primary btn-sm"
+                                        <a href="{{ route('loans.show', $loan) }}" class="btn btn-primary btn-sm"
                                             style="margin-right: 5px;">
                                             <i class="fas fa-eye"></i> Mostrar
                                         </a>
-                                        <a href="{{ route('loans.edit', $loans) }}" class="btn btn-info btn-sm"
+                                        <a href="{{ route('loans.edit', $loan) }}" class="btn btn-info btn-sm"
                                             style="margin-right: 5px;">
                                             <i class="fas fa-edit"></i> Editar
                                         </a>
 
-                                        <form action="{{ route('loans.destroy', $loans->id) }}" method="POST"
+                                        <form action="{{ route('loans.destroy', $loan->id) }}" method="POST"
                                             style="display: inline-block; margin:0; display: flex; align-items: center;"
                                             onsubmit="return confirm('¿Estás seguro que deseea eliminar este préstamo? Esta acción no se puede deshacer.');">
                                             @csrf

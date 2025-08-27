@@ -12,9 +12,9 @@ class Type_equipment extends Model
 
     protected $fillable = ['equipment_name',
     'description',
-    'category',
     'loan_time',
-    'worth','power_consumption',
+    'worth',
+    'power_consumption',
     'technology_category',
     'code',
     'type_status',

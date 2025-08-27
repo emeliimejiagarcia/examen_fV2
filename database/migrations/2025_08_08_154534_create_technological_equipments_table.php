@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('technological_equipment', function (Blueprint $table) {
+        Schema::create('technological_equipments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('mark');
             $table->string('equipment_name');
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('technology_category');
 
             $table->integer('vendor_id')->unsigned();
-            $table->foreign('vendor_id')->references('id')->on('vendor')
+            $table->foreign('vendor_id')->references('id')->on('vendors')
             ->onDelete('cascade')->onUpdate('cascade');
 
 
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('technological_equipment');
+        Schema::dropIfExists('technological_equipments');
     }
 };

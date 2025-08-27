@@ -8,10 +8,10 @@
             <div class="card-header bg-white border-0">
                <div class="row align-items-center">
                     <div class="col-8">
-                        <h3 class="mb-0"><i class="fas fa_newspaper"></i> Ver el Tipo de Equipo </h3>
+                        <h3 class="mb-0"><i class="fas fa_newspaper"></i> Ver tipo de equipos </h3>
                     </div>
                     <div class="col-4 text-right">
-                            <a href="{{ route('type_equipmentS.index')}}" class= "btn btn-sm btn-primary">
+                            <a href="{{ route('type_equipments.index')}}" class= "btn btn-sm btn-primary">
                                 <i class="fas fa-arrow-left"></i> Volver
                             </a>
                     </div>
@@ -44,16 +44,6 @@
                     </div>
                 </div>
 
-                   <div class="row">
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label class="form-control-label" for="category">
-                                <i class="fas fa-user"></i> Categoría del equipo
-                            </label>
-                            <p>{{ $type_equipments->category }}</p>
-                        </div>
-                    </div>
-                </div>
 
                 <div class="row">
                     <div class="col-lg-12">
@@ -135,7 +125,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label" for="technological_equipment">
+                            <label class="form-control-label" for="technological_equipment_id">
                                 <i class="fas fa-user"></i> Nombre del equipo tecnológico
                             </label>
                             <p>{{ $type_equipments->technological_equipment->equipment_name }}</p>

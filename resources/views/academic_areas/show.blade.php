@@ -104,7 +104,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="responsible" class="form-control-label">
+                                <label for="responsible_id" class="form-control-label">
                                     <i class="fas fa-user"></i> Nombre del responsable
                                 </label>
                                 <p>{{ $academic_areas->responsible->name }}</p>
@@ -115,7 +115,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="technological_equipment"class="form-control-label">
+                                <label for="technological_equipment_id"class="form-control-label">
                                     <i class="fas fa-user"></i> Nombre del equipo tecnológico
                                 </label>
                                 <p>{{ $academic_areas->technological_equipment->equipment_name }}</p>
@@ -133,8 +133,6 @@
                             </div>
                         </div>
                     </div>
-
-
 
                 </div>
             </div>

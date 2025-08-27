@@ -182,7 +182,7 @@
                 <select name="responsible_id" id="responsible_id" class="form-control form-control-alternative">
                     <option disabled>Seleccione al Responsable</option>
                     @foreach ($responsibles as $responsible)
-                        <option value="{{ $responsible->id }}" @selected(old('responsible_id', $responsible->responsible) == $responsible->id)>
+                        <option value="{{ $responsible->id }}" @selected(old('responsible_id', $responsible->responsible_id) == $responsible->id)>
                             {{ $responsible->name }}
                         </option>
                     @endforeach

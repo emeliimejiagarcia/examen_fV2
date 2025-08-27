@@ -136,12 +136,12 @@
              <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label class="form-control-label" for="loans_id">
+                        <label class="form-control-label" for="loan_id">
                         <i class="fas fa-graduation-cap"></i> Préstamo </label>
-                        <select name="loans_id" id="loans_id" class="form-control form-control-alternative">
+                        <select name="loan_id" id="loan_id" class="form-control form-control-alternative">
                             <option disabled>Seleccione préstamo</option>
                             @foreach ($loans as $loan)
-                            <option value="{{ $loans->id }}" @selected(old('loans_id', $loans->loans_id) == $loans->id)>
+                            <option value="{{ $loans->id }}" @selected(old('loan_id', $loans->loan_id) == $loans->id)>
                             {{ $loans->loan_date }}
                             </option>
                             @endforeach
