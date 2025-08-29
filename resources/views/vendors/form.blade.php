@@ -1,9 +1,12 @@
+<form action="{{ route('vendors.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+
 <h6 class="heading-small text-muted mb-4">Información del Proveedor</h6>
 <div class="pl-lg-4">
     <div class="row">
         <div class="col-lg-6">
             <div class="form-group">
-                <label class="form-control-label" for="name"> Nombre completo </label>
+                <label class="form-control-label" for="name"> Nombre completo del proveedor </label>
                 <input type="text" id="name" name="name" class="form-control form-control-alternative"
                     placeholder="Ingresar nombre del proveedor" value="{{ old('name', $vendors->name) }}">
             </div>
@@ -131,7 +134,7 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="age"> Edad </label>
-                <input type="number" id="age" name="age"
+                <input type="number" id="age" name="age" min="18"
                 class="form-control form-control-alternative" placeholder="Ingresar edad"
                 value="{{ old('age', $vendors->age) }}">
             </div>
@@ -150,16 +153,14 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-6">
-            <div class="form-group">
-                <label class="form-control-label" for="authorization_provide"> Autorización de Proveedor </label>
-                <input type="text" id="authorization_provide" name="authorization_provide" class="form-control form-control-alternative"
-                    placeholder="Ingrese el nombre del proveedor, fecha de autorización y condiciones." value="{{ old('authorization_provide', $vendors->authorization_provide) }}">
-            </div>
+    <div class="col-lg-6">
+        <div class="form-group">
+            <label class="form-control-label" for="authorization_file"> Autorización de Proveedor </label>
+            <input type="file" id="authorization_file" name="authorization_file" class="form-control form-control-alternative">
+            <small class="form-text text-muted">Suba aquí el archivo de autorización (PDF, JPG, PNG).</small>
         </div>
     </div>
-
-
+</div>
 
 </div>
 

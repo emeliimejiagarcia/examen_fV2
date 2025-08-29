@@ -20,12 +20,11 @@
             </div>
 
             <div class="card-body container-fluid">
-            <form action="{{ route('vendors.store')}}" method="POST">
+            <form action="{{ route('vendors.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @include('vendors.form')
                 </form>
             </div>
-
         </div>
     </div>
 </div>

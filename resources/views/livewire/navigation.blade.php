@@ -111,9 +111,9 @@
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('loan_historys.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('loan_historys.index') ? 'active' : '' }}"
-                href="{{ route('loan_historys.index') }}" wire:navigate>
+        <li class="nav-item {{ Request::route()->named('loan_histories.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('loan_histories.index') ? 'active' : '' }}"
+                href="{{ route('loan_histories.index') }}" wire:navigate>
                 <i class="fa-solid fa-user"></i> Historial de Préstamos
             </a>
         </li>

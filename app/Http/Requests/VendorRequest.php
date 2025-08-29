@@ -29,10 +29,10 @@ class VendorRequest extends FormRequest
             'delivered_products'=> 'required|integer|min:1',
             'warranty'=> 'required|string|min:5|max:255',
             'address'=> 'required|string|min:10|max:255',
-            'department'=> 'required|string|min:5|max:20',
+            'department'=> 'required|string|min:3|max:20',
             'age'=> 'required|string|max:3',
             'identity_card'=> ['required','string', 'max:18', Rule::unique('vendors')->ignore($this->vendor)],
-            'authorization_provide'=> 'required|string|max:255',
+            'authorization_file' => 'nullable', 'file', 'mimes:pdf,jpg,jpeg,png', 'max:2048'
         ];
 
     }
@@ -75,7 +75,7 @@ class VendorRequest extends FormRequest
 
             'department.required' => 'El departamento es obligatorio.',
             'department.string' => 'El departamento debe tener solo carácteres.',
-            'department.min' => 'El departamento debe tener al menos 5 cáracteres.',
+            'department.min' => 'El departamento debe tener al menos 3 cáracteres.',
             'department.max' => 'el departamento tiene un máximo de 20 cáracteres.',
 
             'age.required' => 'La edad es obligatoria.',
@@ -87,10 +87,10 @@ class VendorRequest extends FormRequest
             'identity_card.max' => 'La cédula de identidad tiene un máximo de 18 cáracteres.',
             'identity_card.unique' => 'La cédula de identidad ya existe.',
 
-            'authorization_provide.required' => 'La autorización es obligatoria.',
-            'authorization_provide.string' => 'La autorización debe tener solo carácteres.',
-            'authorization_provide.max' => 'La autorización tiene un máximo de 255 cáracteres.',
-
+            'authorization_file.required' => 'La autorización es obligatoria.',
+            'authorization_file.file' => 'La autorización debe ser un archivo válido.',
+            'authorization_file.mimes' => 'La autorización debe estar en formato PDF, JPG o PNG.',
+            'authorization_file.max' => 'La autorización no debe superar los 2MB.',
 
 
 

@@ -12,7 +12,7 @@
                     <h3 class="mb-0"><i class="fas fa-plus-circle"></i> Registrar historial de préstamos </h3>
                 </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('loan_historys.index')}}" class="btn btn-sm btn-primary">
+                        <a href="{{ route('loan_histories.index')}}" class="btn btn-sm btn-primary">
                             <i class="fas fa-arrow-left"></i> Volver
                         </a>
                     </div>
@@ -20,9 +20,9 @@
             </div>
 
             <div class="card-body container-fluid">
-                <form action="{{ route('loan_historys.store')}}" method="POST">
+                <form action="{{ route('loan_histories.store')}}" method="POST">
                 @csrf
-                @include('loan_historys.form')
+                @include('loan_histories.form')
                 </form>
             </div>
 

@@ -24,7 +24,7 @@ class Academic_areaRequest extends FormRequest
         return [
             'area_name' => 'required|string|min:5|max:255',
             'area_code' => ['required', 'string', 'max:255', Rule::unique('academic_areas')->ignore($this->academic_area)],
-            'location' => 'required|string|min:10|max:255',
+            'location' => 'required|string|min:5|max:255',
             'equipment_coordinator' => 'required|string|min:5|max:255',
             'area_type' => 'required|string|min:5|max:255',
             'description' => 'required|string|min:10|max:255',
@@ -49,7 +49,7 @@ class Academic_areaRequest extends FormRequest
 
             'location.required' => 'La ubicación es obligatoria.',
             'location.string' => 'La ubicación debe tener solo carácteres.',
-            'location.min' => 'La ubicación debe tener al menos 10 cáracteres.',
+            'location.min' => 'La ubicación debe tener al menos 5 cáracteres.',
             'location.max' => 'La ubicación tiene un máximo de 255 cáracteres.',
 
             'equipment_coordinator.required' => 'El coordinador de equipos es obligatorio.',

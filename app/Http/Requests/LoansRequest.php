@@ -39,7 +39,7 @@ class LoansRequest extends FormRequest
             'equipment_type'=> 'required|string|min:5|max:255',
             'brand'=> 'required|string|min:5|max:255',
             'model' => 'required|string|min:5|max:255',
-            'condition_loan'=> 'required|string|min:20|max:255',
+            'condition_loan'=> 'required|string|min:10|max:255',
             'responsible_id'=> 'required',
             'technological_equipment_id'=> 'required',
         ];
@@ -123,7 +123,7 @@ class LoansRequest extends FormRequest
 
             'condition_loan.required' => 'La condición del préstamo es obligatoria.',
             'condition_loan.string' => 'La condición del préstamo debe tener solo carácteres.',
-            'condition_loan.min' => 'La condición del préstamo debe tener al menos 20 cáracteres.',
+            'condition_loan.min' => 'La condición del préstamo debe tener al menos 10 cáracteres.',
             'condition_loan.max' => 'La condición del préstamo tiene un máximo de 255 cáracteres.',
 
             'responsible_id.required' => 'El nombre del responsable es obligatorio.',

@@ -18,7 +18,7 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        $registrations = Registration::with('vendor', 'loan', 'technological_equipment', 'type_equipment')->paginate(5);
+        $registrations = Registration::with('vendor', 'loan', 'technological_equipment', 'type_equipment')->paginate(10);
         return view('registrations.index', compact('registrations'));
     }
 

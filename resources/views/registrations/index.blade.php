@@ -19,23 +19,24 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col"><i class="fas fa-list-ol"></i> Nombre de Usuario </th>
-                                <th scope="col"><i class="fas fa-user"></i> Condición actual del equipo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Última actualización </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Fecha y hora del registro </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Fecha del préstamo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Fecha de devolución </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Duración del préstamo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Tipo de Usuario</th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Nombre del equipo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Número del equipo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Número de serie del equipo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Condición del préstamo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Nombre del proveedor </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Fecha del préstamo </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Nombre del equipo tecnológico </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Tipo de equipo tecnológico </th>
-                                <th scope="col"><i class="fas fa-envelop"></i> Acciones </th>
+                                <th scope="col"><i class="fas fa-user"></i> Nombre de Usuario</th>
+                                <th scope="col"><i class="fas fa-screwdriver-wrench"></i> Condición actual del equipo</th>
+                                <th scope="col"><i class="fas fa-sync-alt"></i> Última actualización</th>
+                                <th scope="col"><i class="fas fa-calendar-day"></i> Fecha y hora del registro</th>
+                                <th scope="col"><i class="fas fa-calendar-plus"></i> Fecha del préstamo</th>
+                                <th scope="col"><i class="fas fa-calendar-check"></i> Fecha de devolución</th>
+                                <th scope="col"><i class="fas fa-clock"></i> Duración del préstamo</th>
+                                <th scope="col"><i class="fas fa-users"></i> Tipo de Usuario</th>
+                                <th scope="col"><i class="fas fa-desktop"></i> Nombre del equipo</th>
+                                <th scope="col"><i class="fas fa-hashtag"></i> Número del equipo</th>
+                                <th scope="col"><i class="fas fa-barcode"></i> Número de serie del equipo</th>
+                                <th scope="col"><i class="fas fa-clipboard-check"></i> Condición del préstamo</th>
+                                <th scope="col"><i class="fas fa-truck"></i> Nombre del proveedor</th>
+                                <th scope="col"><i class="fas fa-calendar-plus"></i> Fecha del préstamo</th>
+                                <th scope="col"><i class="fas fa-laptop"></i> Nombre del equipo tecnológico</th>
+                                <th scope="col"><i class="fas fa-layer-group"></i> Tipo de equipo tecnológico</th>
+                                <th scope="col"><i class="fas fa-calendar-alt"></i> Fecha de Registro</th>
+                                <th scope="col"><i class="fas fa-cogs"></i> Acciones</th>                               
                             </tr>
                         </thead>
                         <tbody>
@@ -59,6 +60,7 @@
                                     <td>{{ $registration->loan->loan_date }}</td>
                                     <td>{{ $registration->technological_equipment->equipment_name}}</td>
                                     <td>{{ $registration->type_equipment->equipment_name}}</td>
+                                    <td>{{ $registration->created_at->format('d/m/Y') }}</td>
 
 
 

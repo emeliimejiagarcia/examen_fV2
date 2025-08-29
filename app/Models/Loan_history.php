@@ -20,7 +20,7 @@ class Loan_history extends Model
     'description',
     'loan_id'];
 
-    public function loans()
+    public function loan()
     {
         return $this->belongsTo(Loans::class);
     }

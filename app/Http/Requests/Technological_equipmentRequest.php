@@ -32,7 +32,7 @@ class Technological_equipmentRequest extends FormRequest
             'acquisition_date'=> 'required|date',
             'availability'=> 'required|string|min:1|max:255',
             'inventory_code'=> ['required','string', 'max:255', Rule::unique('technological_equipments')->ignore($this->technological_equipment)],
-            'technology_category'=> 'required|string|min:10',
+            'technology_category'=> 'required|string|min:4',
             'vendor_id'=> 'required'
         ];
 
@@ -91,7 +91,7 @@ class Technological_equipmentRequest extends FormRequest
 
             'technology_category.required' => 'La categoría tecnológica es obligatoria.',
             'technology_category.string' => 'La categoría tecnológica debe tener solo carácteres.',
-            'technology_category.min' => 'La categoría tecnológica debe tener al menos 10 cáracteres.',
+            'technology_category.min' => 'La categoría tecnológica debe tener al menos 4 cáracteres.',
 
             'vendor_id.required' => 'El nombre del proveedor es obligatorio.',
         ];

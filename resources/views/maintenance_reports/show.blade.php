@@ -148,7 +148,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="technological_equipment_id">
-                                <i class="fas fa-user"></i> Asignatura
+                                <i class="fas fa-user"></i> Equipo Tecnológico
                             </label>
                             <p>{{ $maintenance_reports->technological_equipment->equipment_name }}</p>
                         </div>

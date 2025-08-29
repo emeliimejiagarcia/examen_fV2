@@ -5,15 +5,44 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Vendor;
 use App\Http\Requests\VendorRequest;
+
 class VendorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $vendors = Vendor::latest()->paginate(5);
-        return view ('vendors.index', compact('vendors'));
+        // Inicia la consulta
+        $query = Vendor::query();
+
+        // Filtro por nombre, correo o cédula
+        if ($request->filled('search')) {
+            $search = $request->input('search');
+            $query->where(function($q) use ($search) {
+                $q->where('name', 'like', "%{$search}%")
+                  ->orWhere('mail', 'like', "%{$search}%")
+                  ->orWhere('identity_card', 'like', "%{$search}%");
+            });
+        }
+
+        // Filtro por dirección
+        if ($request->filled('address')) {
+            $query->where('address', 'like', "%{$request->address}%");
+        }
+
+        // Filtro por departamento
+        if ($request->filled('department')) {
+            $query->where('department', $request->department);
+        }
+
+        // Obtener resultados paginados
+        $vendors = $query->latest()->paginate(5);
+
+        // Obtener lista de departamentos únicos para el select
+        $departments = Vendor::select('department')->distinct()->pluck('department');
+
+        return view('vendors.index', compact('vendors', 'departments'));
     }
 
     /**
@@ -22,7 +51,7 @@ class VendorController extends Controller
     public function create()
     {
         $vendors = new Vendor();
-        return view ('vendors.create', compact('vendors'));
+        return view('vendors.create', compact('vendors'));
     }
 
     /**
@@ -30,8 +59,16 @@ class VendorController extends Controller
      */
     public function store(VendorRequest $request)
     {
-        Vendor::create($request->validated());
-        return redirect()->route('vendors.index')->with('success', 'Vendedor creado correctamente.');
+        $vendors = new Vendor($request->validated());
+
+        if ($request->hasFile('authorization_file')) {
+            $path = $request->file('authorization_file')->store('authorizations', 'public');
+            $vendors->authorization_file = $path;
+        }
+
+        $vendors->save();
+
+        return redirect()->route('vendors.index')->with('success', 'Proveedor registrado correctamente.');
     }
 
     /**
@@ -39,8 +76,8 @@ class VendorController extends Controller
      */
     public function show(int $id)
     {
-        $vendors = Vendor::find($id);
-        return view ('vendors.show', compact('vendors'));
+        $vendors = Vendor::findOrFail($id);
+        return view('vendors.show', compact('vendors'));
     }
 
     /**
@@ -48,8 +85,8 @@ class VendorController extends Controller
      */
     public function edit(int $id)
     {
-        $vendors = Vendor::find($id);
-        return view ('vendors.edit', compact('vendors'));
+        $vendors = Vendor::findOrFail($id);
+        return view('vendors.edit', compact('vendors'));
     }
 
     /**
@@ -57,9 +94,16 @@ class VendorController extends Controller
      */
     public function update(VendorRequest $request, int $id)
     {
-        $vendors = Vendor::find($id);
+        $vendors = Vendor::findOrFail($id);
         $vendors->update($request->validated());
-        return redirect()->route('vendors.index')->with('updated', 'Vendedor actualizado correctamente.');
+
+        if ($request->hasFile('authorization_file')) {
+            $path = $request->file('authorization_file')->store('authorizations', 'public');
+            $vendors->authorization_file = $path;
+            $vendors->save();
+        }
+
+        return redirect()->route('vendors.index')->with('updated', 'Proveedor actualizado correctamente.');
     }
 
     /**
@@ -67,8 +111,8 @@ class VendorController extends Controller
      */
     public function destroy(int $id)
     {
-        $vendors = Vendor::find($id);
+        $vendors = Vendor::findOrFail($id);
         $vendors->delete();
-        return redirect()->route('vendors.index')->with('deleted', 'Vendedor eliminado correctamente.');
+        return redirect()->route('vendors.index')->with('deleted', 'Proveedor eliminado correctamente.');
     }
 }

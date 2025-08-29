@@ -13,10 +13,39 @@ class LoansController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $loans = Loans::with('responsible', 'technological_equipment')->paginate(5);
-        return view('loans.index', compact('loans'));
+        // Inicializar la consulta con relaciones
+        $query = Loans::with('responsible', 'technological_equipment');
+
+        // Filtro por nombre de usuario
+        if ($request->filled('username')) {
+            $query->where('username', 'like', '%' . $request->username . '%');
+        }
+
+        // Filtro por tipo de usuario
+        if ($request->filled('user_type')) {
+            $query->where('user_type', $request->user_type);
+        }
+
+        // Filtro por área
+        if ($request->filled('area')) {
+            $query->where('area', $request->area);
+        }
+
+        // Filtro por rol académico
+        if ($request->filled('academic_role')) {
+            $query->where('academic_role', $request->academic_role);
+        }
+
+        // Obtener resultados paginados y mantener filtros en la paginación
+        $loans = $query->paginate(5)->appends($request->query());
+
+        // Pasar catálogos necesarios
+        $responsibles = Responsible::all();
+        $technological_equipments = Technological_equipment::all();
+
+        return view('loans.index', compact('loans', 'responsibles', 'technological_equipments'));
     }
 
     /**
@@ -44,7 +73,7 @@ class LoansController extends Controller
      */
     public function show(int $id)
     {
-        $loans = Loans::find($id);
+        $loans = Loans::findOrFail($id);
         $responsibles = Responsible::all();
         $technological_equipments = Technological_equipment::all();
         return view('loans.show', compact('loans', 'responsibles', 'technological_equipments'));
@@ -55,10 +84,10 @@ class LoansController extends Controller
      */
     public function edit(int $id)
     {
-        $loans = Loans::find($id);
+        $loans = Loans::findOrFail($id);
         $responsibles = Responsible::all();
         $technological_equipments = Technological_equipment::all();
-        return view ('loans.edit', compact('loans','responsibles','technological_equipments'));
+        return view('loans.edit', compact('loans','responsibles','technological_equipments'));
     }
 
     /**
@@ -66,7 +95,7 @@ class LoansController extends Controller
      */
     public function update(LoansRequest $request, int $id)
     {
-        $loans = Loans::find($id);
+        $loans = Loans::findOrFail($id);
         $loans->update($request->validated());
         return redirect()->route('loans.index')->with('success', 'Préstamo actualizado exitosamente.');
     }
@@ -76,7 +105,7 @@ class LoansController extends Controller
      */
     public function destroy(int $id)
     {
-        $loans = Loans::find($id);
+        $loans = Loans::findOrFail($id);
         $loans->delete();
         return redirect()->route('loans.index')->with('success', 'Préstamo eliminado exitosamente.');
     }

@@ -8,7 +8,7 @@
             <div class="card-header bg-white border-0">
                <div class="row align-items-center">
                     <div class="col-8">
-                        <h3 class="mb-0"><i class="fas fa_newspaper"></i> Ver Responsable</h3>
+                        <h3 class="mb-0"><i class="fas fa-user-tie"></i> Ver Responsable</h3>
                     </div>
                     <div class="col-4 text-right">
                             <a href="{{ route('responsibles.index')}}" class= "btn btn-sm btn-primary">
@@ -37,7 +37,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="age">
-                                <i class="fas fa-user"></i> Edad
+                                <i class="fas fa-birthday-cake"></i> Edad
                             </label>
                             <p>{{ $responsibles->age }}</p>
                         </div>
@@ -48,7 +48,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="mail">
-                                <i class="fas fa-user"></i> Correo Electrónico
+                               <i class="fas fa-envelope"></i> Correo Electrónico
                             </label>
                             <p>{{ $responsibles->mail }}</p>
                         </div>
@@ -59,7 +59,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="identity_card">
-                                <i class="fas fa-user"></i> Cédula
+                                <i class="fas fa-id-card"></i> Cédula
                             </label>
                             <p>{{ $responsibles->identity_card }}</p>
                         </div>
@@ -70,7 +70,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="phone_number">
-                                <i class="fas fa-user"></i> Número Telefónico
+                                <i class="fas fa-phone"></i> Número Telefónico
                             </label>
                             <p>{{ $responsibles->phone_number }}</p>
                         </div>
@@ -81,7 +81,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="departament">
-                                <i class="fas fa-user"></i> Departamento
+                                <i class="fas fa-building"></i> Departamento
                             </label>
                             <p>{{ $responsibles->departament }}</p>
                         </div>
@@ -92,7 +92,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="gender">
-                                <i class="fas fa-user"></i> Género
+                                <i class="fas fa-venus-mars"></i> Género
                             </label>
                             <p>{{ $responsibles->gender }}</p>
                         </div>
@@ -103,7 +103,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="nationality">
-                                <i class="fas fa-user"></i> Nacionalidad
+                                <i class="fas fa-flag"></i> Nacionalidad
                             </label>
                             <p>{{ $responsibles->nationality }}</p>
                         </div>
@@ -114,7 +114,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="address">
-                                <i class="fas fa-user"></i> Dirección
+                                <i class="fas fa-map-marker-alt"></i> Dirección
                             </label>
                             <p>{{ $responsibles->address }}</p>
                         </div>
@@ -125,7 +125,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="academic_role">
-                                <i class="fas fa-user"></i> Rol Academico
+                                <i class="fas fa-user-graduate"></i> Rol Academico
                             </label>
                             <p>{{ $responsibles->academic_role }}</p>
                         </div>
@@ -136,7 +136,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="registration_date">
-                                <i class="fas fa-user"></i> Fecha de Registro
+                                <i class="fas fa-calendar-day"></i> Fecha de Registro
                             </label>
                             <p>{{ $responsibles->registration_date }}</p>
                         </div>
@@ -148,7 +148,7 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="register_date">
-                                <i class="fas fa-calender-check"></i>Fecha de Matrícula
+                                <i class="fas fa-calendar-check"></i> Fecha de creación
                             </label>
                             <p>{{ $responsibles->created_at->format('d-m-Y') }}</p>
                         </div>

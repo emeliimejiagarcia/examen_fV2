@@ -21,8 +21,15 @@ class Vendor extends Model
         'department',
         'age',
         'identity_card',
-        'authorization_provide',
+        'authorization_file',
     ];
+
+    public function image()
+    {
+        if ($this->authorization_file) {
+            return asset('storage/' . $this->authorization_file);
+        }
+    }
 
     public function technological_equipment()
     {
@@ -33,5 +40,4 @@ class Vendor extends Model
     {
         return $this->hasMany(Registration::class);
     }
-
 }

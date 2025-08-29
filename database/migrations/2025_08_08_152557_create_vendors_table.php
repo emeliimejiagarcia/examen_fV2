@@ -15,15 +15,15 @@ return new class extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('point_contact');
-            $table->string('phone_number',18)->unique();
+            $table->string('phone_number',18);
             $table->string('mail')->unique();
             $table->integer('delivered_products');
             $table->string('warranty');
             $table->string('address');
             $table->string('department', 20);
             $table->string('age',3);
-            $table->string('identity_card',18)->unique();
-            $table->string('authorization_provide');
+            $table->string('identity_card',18);
+            $table->string('authorization_file')->nullable();
 
              $table->timestamps();
         });

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('equipment_name');
             $table->date('maintenance_date');
             $table->string('maintenance_type');
-            $table->decimal('technician_name');
+            $table->string('technician_name');
             $table->decimal('maintenance_cost');
             $table->string('report_status');
 

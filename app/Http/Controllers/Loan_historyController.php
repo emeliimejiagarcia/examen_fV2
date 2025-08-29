@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Loan_history;
 use App\Http\Requests\Loan_historyRequest;
+use App\Models\Loan_history;
 use App\Models\Loans;
 class Loan_historyController extends Controller
 {
@@ -13,8 +13,8 @@ class Loan_historyController extends Controller
      */
     public function index()
     {
-        $loan_historys = Loan_history::with('loan')->paginate(5);
-        return view ('loan_historys.index',compact('loan_historys'));
+        $loan_histories = Loan_history::with('loan')->paginate(5);
+        return view ('loan_histories.index',compact('loan_histories'));
     }
 
     /**
@@ -22,9 +22,9 @@ class Loan_historyController extends Controller
      */
     public function create()
     {
-        $loan_historys = new Loan_history();
+        $loan_histories = new Loan_history();
         $loans = Loans::all();
-        return view ('loan_historys.create',compact('loan_historys','loans'));
+        return view ('loan_histories.create',compact('loan_histories','loans'));
     }
 
     /**
@@ -33,7 +33,7 @@ class Loan_historyController extends Controller
     public function store(Loan_historyRequest $request)
     {
         Loan_history::create($request->validated());
-       return redirect()->route('loan_historys.index')->with('success','Historial de préstamo creado correctamente');
+       return redirect()->route('loan_histories.index')->with('success','Historial de préstamo creado correctamente');
     }
 
     /**
@@ -41,9 +41,9 @@ class Loan_historyController extends Controller
      */
     public function show(int $id)
     {
-        $loan_historys = Loan_history::find($id);
+        $loan_histories = Loan_history::find($id);
         $loans = Loans::all();
-        return view('loan_historys.show', compact('loan_historys', 'loans'));
+        return view('loan_histories.show', compact('loan_histories', 'loans'));
     }
 
     /**
@@ -51,9 +51,9 @@ class Loan_historyController extends Controller
      */
     public function edit(int $id)
     {
-        $loan_historys = Loan_history::find($id);
+        $loan_histories = Loan_history::find($id);
         $loans = Loans::all();
-        return view('loan_historys.edit', compact('loan_historys', 'loans'));
+        return view('loan_histories.edit', compact('loan_histories', 'loans'));
     }
 
     /**
@@ -61,9 +61,9 @@ class Loan_historyController extends Controller
      */
     public function update(Loan_historyRequest $request, int $id)
     {
-        $loan_historys = Loan_history::find($id);
-        $loan_historys->update($request->validated());
-        return redirect()->route('loan_historys.index')->with('updated', 'Historial de préstamo actualizado correctamente');
+        $loan_histories = Loan_history::find($id);
+        $loan_histories->update($request->validated());
+        return redirect()->route('loan_histories.index')->with('updated', 'Historial de préstamo actualizado correctamente');
     }
 
     /**
@@ -71,8 +71,8 @@ class Loan_historyController extends Controller
      */
     public function destroy(int $id)
     {
-        $loan_historys = Loan_history::find($id);
-        $loan_historys->delete();
-        return redirect()->route('loan_historys.index')->with('deleted', 'Historial de préstamo eliminado correctamente');
+        $loan_histories = Loan_history::find($id);
+        $loan_histories->delete();
+        return redirect()->route('loan_histories.index')->with('deleted', 'Historial de préstamo eliminado correctamente');
     }
 }

@@ -8,10 +8,10 @@
         <div class="card-header bg-white border-0">
             <div class="row align-items-center">
                 <div class="col-8">
-                    <h3 class="mb-0"><i class="fas fa_newspaper"></i> Ver historial de préstamos </h3>
+                    <h3 class="mb-0"><i class="fas fa-book-reader"></i> Ver historial de préstamos </h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('loan_historys.index')}}" class= "btn btn-sm btn-primary">
+                        <a href="{{ route('loan_histories.index')}}" class= "btn btn-sm btn-primary">
                             <i class="fas fa-arrow-left"></i> Volver
                             </a>
                 </div>
@@ -28,7 +28,7 @@
                             <label class="form-control-label" for="username">
                                 <i class="fas fa-user"></i> Nombre de usuario
                             </label>
-                            <p>{{ $loan_historys->username }}</p>
+                            <p>{{ $loan_histories->username }}</p>
                         </div>
                     </div>
                 </div>
@@ -37,9 +37,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="equipment_name">
-                                <i class="fas fa-user"></i> Nombre del equipo tecnológico
+                                <i class="fas fa-laptop"></i> Nombre del equipo tecnológico
                             </label>
-                            <p>{{ $loan_historys->equipment_name }}</p>
+                            <p>{{ $loan_histories->equipment_name }}</p>
                         </div>
                     </div>
                 </div>
@@ -48,9 +48,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="type_equipment">
-                                <i class="fas fa-user"></i> Tipo de equipo tecnológico
+                            <i class="fas fa-layer-group"></i> Tipo de equipo tecnológico
                             </label>
-                            <p>{{ $loan_historys->type_equipment }}</p>
+                            <p>{{ $loan_histories->type_equipment }}</p>
                         </div>
                     </div>
                 </div>
@@ -59,9 +59,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="loan_date">
-                                <i class="fas fa-user"></i> Fecha del préstamo
+                               <i class="fas fa-calendar-alt"></i> Fecha del préstamo
                             </label>
-                            <p>{{ $loan_historys->loan_date }}</p>
+                            <p>{{ $loan_histories->loan_date }}</p>
                         </div>
                     </div>
                 </div>
@@ -70,9 +70,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="input_status">
-                                <i class="fas fa-user"></i> Estado de entrada
+                                <i class="fas fa-door-open"></i> Estado de entrada
                             </label>
-                            <p>{{ $loan_historys->input_status }}</p>
+                            <p>{{ $loan_histories->input_status }}</p>
                         </div>
                     </div>
                 </div>
@@ -81,9 +81,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="exit_status">
-                                <i class="fas fa-user"></i> Estado de salida
+                                <i class="fas fa-door-closed"></i> Estado de salida
                             </label>
-                            <p>{{ $loan_historys->exit_status }}</p>
+                            <p>{{ $loan_histories->exit_status }}</p>
                         </div>
                     </div>
                 </div>
@@ -92,9 +92,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="condition">
-                                <i class="fas fa-user"></i> Condición del equipo tecnológico
+                                <i class="fas fa-tools"></i> Condición del equipo tecnológico
                             </label>
-                            <p>{{ $loan_historys->condition }}</p>
+                            <p>{{ $loan_histories->condition }}</p>
                         </div>
                     </div>
                 </div>
@@ -103,9 +103,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="loan_code">
-                                <i class="fas fa-user"></i> Código de préstamo
+                                <i class="fas fa-barcode"></i> Código de préstamo
                             </label>
-                            <p>{{ $loan_historys->loan_code }}</p>
+                            <p>{{ $loan_histories->loan_code }}</p>
                         </div>
                     </div>
                 </div>
@@ -114,9 +114,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="description">
-                                <i class="fas fa-user"></i> Descripción del préstamo
+                                <i class="fas fa-sticky-note"></i> Descripción del préstamo
                             </label>
-                            <p>{{ $loan_historys->description }}</p>
+                            <p>{{ $loan_histories->description }}</p>
                         </div>
                     </div>
                 </div>
@@ -126,9 +126,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="loan_id">
-                                <i class="fas fa-user"></i> Préstamos
+                                <i class="fas fa-user-check"></i> Préstamos
                             </label>
-                            <p>{{ $loan_historys->loans->loan_date }}</p>
+                            <p>{{ $loan_histories->loan->username }}</p>
                         </div>
                     </div>
                 </div>
@@ -138,9 +138,9 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label" for="register_date">
-                                <i class="fas fa-user"></i> Fecha del Préstamo
+                                <i class="fas fa-calendar-alt"></i> Fecha del Préstamo
                             </label>
-                            <p>{{ $loan_historys->created_at->format('d-m-Y') }}</p>
+                            <p>{{ $loan_histories->created_at->format('d-m-Y') }}</p>
                         </div>
                     </div>
                 </div>

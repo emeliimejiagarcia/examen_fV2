@@ -8,13 +8,14 @@
             <div class="card-header bg-white border-0">
                 <div class="row align-items-center">
                     <div class="col-8">
-
-                        <h3 class="mb-0"><i class="fas fa_newspaper"></i> Ver Área académica </h3>
+                        <h3 class="mb-0"><i class="fas fa-school"></i> Ver Área académica </h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('academic_areas.index') }}" class= "btn btn-sm btn-primary">
+                        <a href="{{ route('academic_areas.index') }}" class="btn btn-sm"
+                            style="background-color: #1a237e; color: white;">
                             <i class="fas fa-arrow-left"></i> Volver
                         </a>
+
                     </div>
                 </div>
             </div>
@@ -27,7 +28,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="area_name">
-                                    <i class="fas fa-user"></i>  Nombre de la área
+                                    <i class="fas fa-id-badge"></i> Nombre del área
                                 </label>
                                 <p>{{ $academic_areas->area_name }}</p>
                             </div>
@@ -38,7 +39,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="area_code">
-                                    <i class="fas fa-user"></i> Código del área académica
+                                    <i class="fas fa-barcode"></i> Código del área académica
                                 </label>
                                 <p>{{ $academic_areas->area_code }}</p>
                             </div>
@@ -49,7 +50,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="location">
-                                    <i class="fas fa-user"></i> Ubicación
+                                    <i class="fas fa-map-marker-alt"></i> Ubicación
                                 </label>
                                 <p>{{ $academic_areas->location }}</p>
                             </div>
@@ -60,7 +61,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="equipment_coordinator">
-                                    <i class="fas fa-user"></i> Coordinador de Equipos
+                                    <i class="fas fa-user-cog"></i> Coordinador de Equipos
                                 </label>
                                 <p>{{ $academic_areas->equipment_coordinator }}</p>
                             </div>
@@ -71,7 +72,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="area_type">
-                                    <i class="fas fa-user"></i> Tipo de Área
+                                    <i class="fas fa-layer-group"></i> Tipo de Área
                                 </label>
                                 <p>{{ $academic_areas->area_type }}</p>
                             </div>
@@ -82,7 +83,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="description">
-                                    <i class="fas fa-user"></i> Descripción del área
+                                    <i class="fas fa-align-left"></i> Descripción del área
                                 </label>
                                 <p>{{ $academic_areas->description }}</p>
                             </div>
@@ -93,7 +94,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="equipment_quantity">
-                                    <i class="fas fa-user"></i> Cantidad de equipos
+                                    <i class="fas fa-desktop"></i> Cantidad de equipos
                                 </label>
                                 <p>{{ $academic_areas->equipment_quantity }}</p>
                             </div>
@@ -115,8 +116,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label for="technological_equipment_id"class="form-control-label">
-                                    <i class="fas fa-user"></i> Nombre del equipo tecnológico
+                                <label for="technological_equipment_id" class="form-control-label">
+                                    <i class="fas fa-laptop"></i> Nombre del equipo tecnológico
                                 </label>
                                 <p>{{ $academic_areas->technological_equipment->equipment_name }}</p>
                             </div>
@@ -127,7 +128,7 @@
                         <div class="col-lg-12">
                             <div class="form-group">
                                 <label class="form-control-label" for="register_date">
-                                    <i class="fas fa-calender-check"></i>Fecha de Registro
+                                    <i class="fas fa-calendar-alt"></i> Fecha de Registro
                                 </label>
                                 <p>{{ $academic_areas->created_at->format('d-m-Y') }}</p>
                             </div>
@@ -139,4 +140,3 @@
         </div>
     </div>
 @endsection
-

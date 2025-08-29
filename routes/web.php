@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('/academic_areas', Academic_areaController::class);
     Route::resource('/loans', LoansController::class);
     Route::resource('/registrations', RegistrationController::class);
-    Route::resource('/loan_historys', Loan_historyController::class);
+    Route::resource('/loan_histories', Loan_historyController::class);
     Route::resource('/maintenance_reports', Maintenance_reportController::class);
 });
 

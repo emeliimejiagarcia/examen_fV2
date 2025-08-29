@@ -6,15 +6,43 @@ use Illuminate\Http\Request;
 use App\Models\Technological_equipment;
 use App\Http\Requests\Technological_equipmentRequest;
 use App\Models\Vendor;
+
 class Technological_equipmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-      $technological_equipments = Technological_equipment::with('vendor')->paginate(5);
-      return view('technological_equipments.index', compact('technological_equipments'));
+        $query = Technological_equipment::query();
+
+        // Filtro de búsqueda general
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function($q) use ($search) {
+                $q->where('equipment_name', 'like', "%{$search}%")
+                  ->orWhere('serial_number', 'like', "%{$search}%")
+                  ->orWhere('mark', 'like', "%{$search}%")
+                  ->orWhere('brand', 'like', "%{$search}%")
+                  ->orWhere('inventory_code', 'like', "%{$search}%");
+            });
+        }
+
+        // Filtro por proveedor
+        if ($request->filled('vendor_id')) {
+            $query->where('vendor_id', $request->vendor_id);
+        }
+
+        $technological_equipments = $query
+            ->with('vendor')
+            ->latest()
+            ->paginate(10)
+            ->appends($request->query()); // Mantener filtros en paginación
+
+        // Traer todos los proveedores para el select
+        $vendors = Vendor::all();
+
+        return view('technological_equipments.index', compact('technological_equipments', 'vendors'));
     }
 
     /**

@@ -13,10 +13,28 @@ class Academic_areaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $academic_areas = Academic_area::with('responsible', 'technological_equipment')->paginate(5);
-        return view('academic_areas.index', compact('academic_areas'));
+    public function index(Request $request)
+{
+    $query = Academic_area::query()->with('responsible', 'technological_equipment');
+
+    // Filtro por nombre del área
+    if ($request->filled('area_name')) {
+        $query->where('area_name', 'like', '%' . $request->area_name . '%');
+    }
+
+    // Filtro por coordinador del equipo
+    if ($request->filled('equipment_coordinator')) {
+        $query->where('equipment_coordinator', 'like', '%' . $request->equipment_coordinator . '%');
+    }
+
+    // Filtro por ubicación
+    if ($request->filled('location')) {
+        $query->where('location', 'like', '%' . $request->location . '%');
+    }
+
+    $academic_areas = $query->paginate(5)->appends($request->query());
+
+    return view('academic_areas.index', compact('academic_areas'));
     }
 
     /**

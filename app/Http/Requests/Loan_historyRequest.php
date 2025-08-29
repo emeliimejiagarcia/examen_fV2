@@ -22,14 +22,14 @@ class Loan_historyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'username' => 'required|string|min:10|max:255',
+            'username' => 'required|string|min:5|max:255',
             'equipment_name' => 'required|string|min:5|max:255',
             'type_equipment' => 'required|string|min:5|max:255',
             'loan_date' => 'required|date',
             'input_status' => 'required|string|min:10|max:255',
             'exit_status' => 'required|string|min:10|max:255',
             'condition' => 'required|string|min:20|max:255',
-            'loan_code' => ['required', 'string', 'max:255', Rule::unique('loan_history')->ignore($this->loan_history)],
+            'loan_code' => ['required', 'string', 'max:255', Rule::unique('loan_histories')->ignore($this->loan_history)],
             'description' => 'required|string|min:10|max:255',
             'loan_id' => 'required',
         ];
@@ -40,7 +40,7 @@ class Loan_historyRequest extends FormRequest
         return[
             'username.required' => 'El nombre de usuario es obligatorio.',
             'username.string' => 'El nombre de usuario debe tener solo carácteres.',
-            'username.min' => 'El nombre de usuario debe tener al menos 10 cáracteres.',
+            'username.min' => 'El nombre de usuario debe tener al menos 5 cáracteres.',
             'username.max' => 'El nombre de usuario tiene un máximo de 255 cáracteres.',
 
             'equipment_name.required' => 'El nombre del equipo es obligatorio.',
